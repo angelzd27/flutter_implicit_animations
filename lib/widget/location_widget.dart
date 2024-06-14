@@ -25,14 +25,14 @@ class LocationWidgetState extends State<LocationWidget> {
       alignment: Alignment.center,
       children: [
         AnimatedPositioned(
-          duration: const Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 250),
           bottom: isExpanded ? 40 : 100,
-          width: isExpanded ? size.width * 0.8 : size.width * 0.7,
+          width: isExpanded ? size.width * 0.78 : size.width * 0.7,
           height: isExpanded ? size.height * 0.6 : size.height * 0.5,
           child: ExpandedContentWidget(location: widget.location),
         ),
         AnimatedPositioned(
-          duration: const Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 250),
           bottom: isExpanded ? 150 : 100,
           child: GestureDetector(
             onPanUpdate: onPanUpdate,
@@ -52,8 +52,8 @@ class LocationWidgetState extends State<LocationWidget> {
 
     Navigator.of(context).push(
       PageRouteBuilder(
-        transitionDuration: const Duration(seconds: 1),
-        reverseTransitionDuration: const Duration(seconds: 1),
+        transitionDuration: const Duration(milliseconds: 500),
+        reverseTransitionDuration: const Duration(milliseconds: 500),
         pageBuilder: (context, animation, secondaryAnimation) {
           final curvedAnimation = CurvedAnimation(
             parent: animation,
